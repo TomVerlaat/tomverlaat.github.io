@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe of the day!</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js"></script>
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+</head>
+
+<body>
+    <div id="page">
+        <div class="header column">
+            <h1 id="recipe-name"> </h1>
+            <div>
+                <p> <strong> Category: </strong> </p>
+                <p class="inline" id="recipe-category"> </p>
+            </div>
+            <div>
+                <p> <strong> Area: </strong> </p>
+                <p class="inline" id="recipe-area"> </p>
+            </div>
+            <div>
+                <p> <strong id="tags-title"> Tags: </strong> </p>
+                <p class="inline" id="recipe-tags"> </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="column" id="gallery-column">
+                <img id="recipe-image">
+            </div>
+            <div class="column top-border" id="sidebar-column">
+                <h1> Ingredients</h1>
+                <ul class="list">
+                    <div id="recipe-ingredient-list"> </div>
+                </ul>
+            </div>
+        </div>
+        <div class="column top-border" id="main-column">
+            <h1> Instructions </h1>
+            <p id="recipe-instructions"> </p>
+        </div>
+        <div class="column">
+            <a class="button" id="recipe-link"> <span> Original Recipe </span> </a>
+        </div>
+    </div>
+</body>
+
+</html>

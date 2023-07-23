@@ -1,0 +1,162 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700");
+
+/* Variables */
+$column-spacing: 10px;
+$primary-color: #693f7e;
+
+/* Essentials */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Page Setup */
+body {
+    height: 100%;
+    background-color: black;
+    color: #434344;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+#page {
+    max-width: 960px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 0 $column-spacing;
+    background-color: #fff;
+
+    > .column:first-child {
+        margin-top: 0;
+    }
+
+    > .column:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Classes */
+.wrapper {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    margin: $column-spacing;
+    /* Fix margin collapse issues */
+    overflow: hidden;
+}
+
+h1 {
+    color: $primary-color;
+    margin-top: $column-spacing;
+    margin-bottom: $column-spacing;
+    animation: fadeInFromLeft 1s ease-in-out;
+}
+
+.tag {
+    display: inline-block;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+.top-border {
+    border-top: 3px solid $primary-color;
+}
+
+.inline {
+    display: inline;
+}
+
+.list {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.ingredient {
+    list-style-type: disc;
+    padding: 0;
+}
+
+.button {
+    display: inline-block;
+    margin-top: $column-spacing;
+    margin-bottom: $column-spacing;
+    background-color: $primary-color;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+
+        &:after {
+            content: "\00bb";
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+    }
+
+    &:hover {
+        span {
+            padding-right: 25px;
+
+            &:after {
+                opacity: 1;
+                right: 0;
+            }
+        }
+    }
+}
+
+/* Animations */
+@keyframes fadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Media Queries */
+
+/* Tablet */
+@media (max-width: 1200px) {
+    #page {
+        max-width: 1200px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+    }
+}

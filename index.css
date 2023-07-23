@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700");
+/* Variables */
+/* Essentials */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Page Setup */
+body {
+  height: 100%;
+  background-color: black;
+  color: #434344;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+#page {
+  max-width: 960px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  background-color: #fff;
+}
+#page > .column:first-child {
+  margin-top: 0;
+}
+#page > .column:last-child {
+  margin-bottom: 0;
+}
+
+/* Classes */
+.wrapper {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  margin: 10px;
+  /* Fix margin collapse issues */
+  overflow: hidden;
+}
+
+h1 {
+  color: #693f7e;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  animation: fadeInFromLeft 1s ease-in-out;
+}
+
+.tag {
+  display: inline-block;
+  text-decoration: underline;
+  margin-right: 10px;
+}
+
+.top-border {
+  border-top: 3px solid #693f7e;
+}
+
+.inline {
+  display: inline;
+}
+
+.list {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.ingredient {
+  list-style-type: disc;
+  padding: 0;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #693f7e;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* Animations */
+@keyframes fadeInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Media Queries */
+/* Tablet */
+@media (max-width: 1200px) {
+  #page {
+    max-width: 1200px;
+  }
+}
+/* Mobile */
+@media (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=index.css.map */
